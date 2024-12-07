@@ -10,6 +10,8 @@ def main():
     print(f"Screen height: {SCREEN_HEIGHT}")
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    clock = pygame.time.Clock()
+    dt = 0
     running = True
     while running:
         event = pygame.event.poll()
@@ -17,6 +19,8 @@ def main():
             running = False
         screen.fill((0,0,0))
         pygame.display.flip()
+        dt = clock.tick(60)/1000
+        
 
 if __name__ == "__main__":
     main()
